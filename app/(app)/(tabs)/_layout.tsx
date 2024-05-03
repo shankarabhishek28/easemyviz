@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Image, Dimensions } from 'react-native';
-import { Tabs } from 'expo-router';
+import { Tabs, router} from 'expo-router'; 
 import { Colors } from '../../../styles/Colors';
 import { FontAwesome5 } from '@expo/vector-icons'; // Import FontAwesome5 component
-import { View, Text } from '@gluestack-ui/themed';
+import { View, Text, Pressable } from '@gluestack-ui/themed';
 
 type TabIconProps = {
     name: string;
@@ -32,13 +32,13 @@ const TabIcon: React.FC<TabIconProps> = ({title, name, color, focused }) => {
 
 const TabsLayout: React.FC = () => {
     const [containerWidth, setContainerWidth] = useState<number>(0);
-
     useEffect(() => {
         const screenWidth = Dimensions.get('window').width;
         const tabBarWidth = screenWidth * 0.95; // Adjust as needed
         setContainerWidth(tabBarWidth);
     }, []);
-
+    
+    
     return (
         <>
             <Tabs
@@ -53,10 +53,10 @@ const TabsLayout: React.FC = () => {
                         width: containerWidth,
                         marginLeft: -containerWidth / 2,
                         marginBottom: '2%',
-                        borderRadius: 28,
+                        borderRadius: 32,
                         backgroundColor: Colors.primary,
                         borderTopColor: Colors.primary,
-                        height: 56,
+                        height: 68,
                     },
                     tabBarItemStyle: {
                         
@@ -67,6 +67,7 @@ const TabsLayout: React.FC = () => {
                 }}
             >
                 <Tabs.Screen
+                
                     name='index'
                     options={{
                         title: 'Home',
@@ -84,8 +85,14 @@ const TabsLayout: React.FC = () => {
                 <Tabs.Screen
                     name='chatBot'
                     options={{
-                        title: 'Home',
-                        headerShown: false,
+                        title: 'ChatBot',
+                        tabBarStyle: { display: 'none' }, 
+                        headerShown: true,
+                        headerLeft: () => (
+                            <Pressable onPress={() => router.push('..')} >
+                                <FontAwesome5 name="arrow-left" size={20} marginLeft={20} color="black" />
+                            </Pressable>
+                        ),
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 name="comment" // Replace with the appropriate FontAwesome5 icon name
@@ -100,8 +107,8 @@ const TabsLayout: React.FC = () => {
                 <Tabs.Screen
                     name='notification'
                     options={{
-                        title: 'Home',
-                        headerShown: false,
+                        title: 'Notification',
+                        headerShown: true,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 name="bell" // Replace with the appropriate FontAwesome5 icon name
@@ -114,16 +121,16 @@ const TabsLayout: React.FC = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='liked'
+                    name='profile'
                     options={{
-                        title: 'Home',
-                        headerShown: false,
+                        title: 'Settings',
+                        headerShown: true,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
-                                name="heart" // Replace with the appropriate FontAwesome5 icon name
+                                name="user" // Replace with the appropriate FontAwesome5 icon name
                                 color={color}
                                 focused={focused}
-                                title='Likes'
+                                title='Profile'
 
                             />
                         )

@@ -15,6 +15,7 @@ import PagerViewComp from '../../../component/pagerView';
 import CourseList from '../../../component/courseList';
 import FlagButtons from '../../../component/flagButtons';
 import PopularUniversity from '../../../component/popularUni';
+import News from '../../../component/news';
 
 
 
@@ -25,7 +26,7 @@ const page = () => {
 
         <SafeAreaView>
             <ScrollView>
-                <View gap={24}>
+                <View gap={24} backgroundColor='white'>
                     <Box paddingLeft={20} paddingRight={20} paddingTop={20} gap={20}>
                         <Header />
                         <Box>
@@ -39,12 +40,16 @@ const page = () => {
                         <PagerViewComp />
 
                         <FlagButtons />
-                        <CourseList />
+                       
                     </Box>
+                    <CourseList />
 
                     
                     <Box gap={24} display='flex' alignItems='center' >
                         <PopularUniversity />
+                    </Box>
+                    <Box paddingLeft={20} paddingRight={20} paddingTop={20} gap={20}>
+                        <News />
                     </Box>
 
 

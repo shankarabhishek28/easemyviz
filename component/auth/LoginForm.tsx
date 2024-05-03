@@ -11,9 +11,10 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 
 
 const LoginForm = () => {
-    const [values, setValues] = useState(["Illustration"])
+    const [values, setValues] = useState<string[]>([]);
+    const [termsAgreed, setTermsAgreed] = useState<string[]>([]);
 
-
+    console.log(values)
 
     // const loginScheme: ZodType<LoginSchema> = z.object({
     //     email_phone: z.string()
@@ -47,7 +48,7 @@ const LoginForm = () => {
         //  </KeyboardAwareScrollView>
 
         <ScrollView flex={1} showsHorizontalScrollIndicator={false} width='100%' height='70%' backgroundColor='white' marginTop='10%' borderTopRightRadius={20} borderTopLeftRadius={20} padding={24} >
-            <Box display='flex' height={500} width='100%' flexDirection='column'   gap={24}>
+            <Box display='flex' height={500} width='100%' flexDirection='column' gap={24}>
                 <Box>
                     <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', fontWeight: '700' }}>Login to Your Account</Text>
                     <Text style={{ marginTop: 6.2, color: '#9EA1AE', fontSize: 12 }}>Make sure that you already have an account</Text>
@@ -71,7 +72,35 @@ const LoginForm = () => {
                         <CustomAuthInput errors={{}} keyboardType='default' type='password' label={'Password'} placeholder={'Enter your password'} control={control} name={'password'} />
 
                     </Box>
-                    <Box marginTop={16} display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'>
+                    <Box  display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'>
+                        <CheckboxGroup
+                            value={termsAgreed}
+                            onChange={(keys) => {
+                                setTermsAgreed(keys)
+                                console.log("keys", keys)
+                            }}
+                        >
+                            <HStack space="2xl">
+                                <Checkbox aria-label='terms' value='true'>
+                                    <CheckboxIndicator mr="$2">
+                                        <CheckboxIcon fontSize={12} as={CheckIcon} />
+                                    </CheckboxIndicator>
+                                    <CheckboxLabel>
+                                        <Link href={'/(auth)/termsAndCondition'} asChild>
+                                            <Text textDecorationLine='underline' fontSize={12} fontFamily='Poppins-Regular' color='#25388D'>Agree to Terms & conditions
+                                            </Text>
+                                        </Link></CheckboxLabel>
+                                </Checkbox>
+
+                            </HStack>
+                        </CheckboxGroup>
+
+                        {/* <Button variant="link" onPress={handleForgetPassword}> */}
+
+                        {/* </Button> */}
+
+                    </Box>
+                    <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'>
                         <CheckboxGroup
                             value={values}
                             onChange={(keys) => {
@@ -83,7 +112,7 @@ const LoginForm = () => {
                                     <CheckboxIndicator mr="$2">
                                         <CheckboxIcon fontSize={12} as={CheckIcon} />
                                     </CheckboxIndicator>
-                                    <CheckboxLabel fontSize={12}>Stay Logged In</CheckboxLabel>
+                                    <CheckboxLabel fontFamily='Poppins-Regular' fontSize={12}>Stay Logged In</CheckboxLabel>
                                 </Checkbox>
 
                             </HStack>
@@ -97,11 +126,10 @@ const LoginForm = () => {
 
                     </Box>
                 </Box>
-                <Button alignSelf='center'  height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>LogIn</Text></Button>
+                <Button alignSelf='center' height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>LogIn</Text></Button>
             </Box>
         </ScrollView>
 
-        // <View style={{ width: '100%', height:'65%', flex: 1, backgroundColor: 'white', position: "absolute", borderTopRightRadius: 20, borderTopLeftRadius: 20, paddingHorizontal: 20,bottom:0 }}>
 
 
 
