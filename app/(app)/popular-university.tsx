@@ -3,8 +3,10 @@ import { Image, Text, View, Box, ScrollView } from '@gluestack-ui/themed';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Colors } from '../../styles/Colors';
 import { Pressable } from '@gluestack-ui/themed';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 const Page = () => {
+
+     
     type DemoData = {
         id: string;
         title: string;
@@ -45,56 +47,56 @@ const Page = () => {
         // Add more data as needed
     ];
 
+    const {country}  = useLocalSearchParams()
+
+
     return (
-        <ScrollView >
+        <ScrollView bg={'$white'}>
+            {country &&
+            <Text px={20} fontWeight='$bold' fontSize={'$lg'} bold color={'$black'} mt={20}>{country} Universities</Text>
+            }
             <View height='100%' width='100%' marginBottom={40}>
-            {demoDataArray.map((item) => (
-                <Pressable onPress={()=>router.push('/(app)/university-details')}  key={item.id} flexDirection='column'  alignItems='center' marginTop={24} gap={20} >
-                    <Box position='relative'>
-                        <Image
-                        
-                            alt='university image'
-                            width={348}
-                            height={236}
-                            borderRadius={16}
-                            source={item.imgURL}
-                        />
-                        <LinearGradient
-                            colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.7)']}
-                            start={{ x: 0, y: 0 }}
-                            end={{ x: 0, y: 1 }}
-                            style={{
-                                position: 'absolute',
-                                left: 0,
-                                right: 0,
-                                bottom: 0,
-                                height: 100,
-                                borderRadius: 16,
-                            }}
-                        />
-                    </Box>
-                    <Box
-                        width='100%'
-                        height='100%'
-                        position='absolute'
-                        flexDirection='column'
-                        justifyContent='space-between'
-                        zIndex={3}
-                        paddingTop={20}
-                        paddingBottom={20}
-                        left={40}
-                    >
-                        <Box width={60} elevation={5} alignItems='center' padding={6} borderRadius={8} backgroundColor={Colors.primary}><Text color='white' size='xs'>{item.tag}</Text></Box>
-                        
-                        <Box>
-                            <Text color='white' fontWeight='700' fontFamily='Poppins-Regular' fontSize={18}>{item.title}</Text>
-                            <Text color='white' fontSize={12} fontWeight='700' fontFamily='Poppins-Regular'>{item.subtitle}</Text>
+                {demoDataArray.map((item) => (
+                    <Pressable onPress={() => router.push('/(app)/university-details')} key={item.id} flexDirection='column' alignItems='center' marginTop={24} gap={20} >
+                        <Box w={'90%'} h={235}  position='relative'>
+                            <Image
+                                alt='university image'
+                                style={{width:'100%',height:'100%'}}
+                                borderRadius={16}
+                                source={item.imgURL}
+                            />
+                            <LinearGradient
+                                colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.7)']}
+                                start={{ x: 0, y: 0 }}
+                                end={{ x: 0, y: 1 }}
+                                style={{
+                                    position: 'absolute',
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    height: 100,
+                                    borderRadius: 16,
+                                }}
+                            />
+                        <Box
+                            position='absolute'
+                            top={0}
+                            left={0}
+                            right={0}
+                            bottom={0}
+                        >
+
+                            <Box bottom={12} left={10} position={'absolute'}>
+                                <Text color='white' fontWeight='700' fontFamily='Poppins-Regular' fontSize={18}>{item.title}</Text>
+                                <Text color='white' fontSize={12} fontWeight='700' fontFamily='Poppins-Regular'>{item.subtitle}</Text>
+                            </Box>
                         </Box>
-                    </Box>
-                </Pressable>
-            ))}
+                            
+                        </Box>
+                    </Pressable>
+                ))}
             </View>
-          
+
         </ScrollView>
     );
 };

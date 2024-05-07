@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, FlatList } from 'react-native';
-import { Box, Button } from '@gluestack-ui/themed';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Box, Button, ChevronLeftIcon, Icon } from '@gluestack-ui/themed';
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Colors } from '../../styles/Colors';
 import { Text } from '@gluestack-ui/themed';
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { EvilIcons } from '@expo/vector-icons';
+import { router, useLocalSearchParams, useRouter } from 'expo-router';
 
 interface ImageData {
   img: any; // You might replace 'any' with a more specific type depending on what type of data 'require' returns.
 }
 
 const Page: React.FC = () => {
+
+  const { country } = useLocalSearchParams()
+
   const dataAr: ImageData[] = [
     { img: require('../../assets/images/popu2.png') },
     { img: require('../../assets/images/popu3.png') },
@@ -24,6 +28,14 @@ const Page: React.FC = () => {
 
   ];
 
+  const {top} = useSafeAreaInsets()
+
+  const expoRouter = useRouter();
+
+  useEffect(() => {
+    expoRouter.setParams({ title: country as string })
+  }, [])
+
   const renderItem = ({ item }: { item: ImageData }) => (
     <Image style={{
       width: 54, height: 54, marginRight: 12, borderRadius: 12
@@ -32,9 +44,16 @@ const Page: React.FC = () => {
 
   return (
     <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: Colors.background }}>
+
+
       <Box width='100%' height='100%'>
         <Box width='100%' height='35%'>
           <Image style={{ width: '100%', height: '100%' }} alt='university Image' source={require('../../assets/images/popu1.png')} />
+          <Button onPress={() => router.push('..')} position={'absolute'} left={0} right={0} top={top+5} backgroundColor='white' width={30} height={40} borderRadius={50} alignItems='center' justifyContent='center' marginLeft={16}>
+            <Icon as={ChevronLeftIcon} color='black' w="$6" h="$6" />
+
+          </Button>
+
         </Box>
         <Box backgroundColor='white' width='100%' height='72%' position='absolute' bottom={0} borderRadius={40} padding={20} gap={24}>
           <Box paddingTop={12}>
@@ -105,6 +124,7 @@ const Page: React.FC = () => {
 
         </Box>
       </Box>
+
     </SafeAreaView>
   );
 };
