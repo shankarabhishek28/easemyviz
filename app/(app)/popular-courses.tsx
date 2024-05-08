@@ -6,13 +6,15 @@ import { useNavigation } from '@react-navigation/native';
 import {
     FlatList,
 
+    Image,
+
     StatusBar,
     StyleSheet,
 
 
 } from 'react-native';
 import { Shadow } from 'react-native-shadow-2';
-import { Avatar, Box, Text, View, AvatarFallbackText, AvatarImage, InputIcon, Input, Icon, SearchIcon, InputSlot, InputField, Button, Image, Pressable, ChevronRightIcon, ScrollView,  ArrowLeftIcon } from '@gluestack-ui/themed'
+import { Avatar, Box, Text, View, AvatarFallbackText, AvatarImage, InputIcon, Input, Icon, SearchIcon, InputSlot, InputField, Button,  Pressable, ChevronRightIcon, ScrollView,  ArrowLeftIcon } from '@gluestack-ui/themed'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
 import { Colors } from '../../styles/Colors'
 
@@ -92,16 +94,19 @@ type ItemProps = {
 
 const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
     <Pressable onPress={()=>router.push('/(app)/course')} style={[styles.item, { backgroundColor }]}>
-        <Image width={171} height={114} borderRadius={8} alt='course image' source={item.img} />
-        <Box width={154} height={114} gap={4}>
+        <Image style={{height:'100%', flex:1, borderRadius:8}} alt='course image' source={item.img} />
+        <Box flex={1}  gap={4}>
+            <Box flex={1}>
             <Text style={[styles.title, { color: textColor, fontWeight: '600' }]}>{item.title}</Text>
             <Text color='#8D989D' fontSize={10} fontWeight='500' fontFamily='Poppins-Regular'>Adelia Stebli, Charlie Puth</Text>
-            <Box flexDirection='row' alignItems='center' gap={10}>
+            </Box>
+            
+            <Box flex={1} flexDirection='row' alignItems='center' gap={10}>
                 <FontAwesome5 name="users" size={14} color='#BCC7D1' />
                 <Text fontSize={12} fontFamily='Poppins-Regular' opacity={0.5} color='black'>425 students</Text>
 
             </Box>
-            <Button backgroundColor='white' borderWidth={2} borderColor='#E0E0E0'><Text>View Details</Text></Button>
+            <Button flex={1} backgroundColor='white' borderWidth={2} borderColor='#E0E0E0'><Text>View Details</Text></Button>
 
         </Box>
 

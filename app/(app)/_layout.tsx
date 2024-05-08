@@ -17,9 +17,9 @@ const rootLayout = () => {
 
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="popular-courses" options={{ headerShown: true, title: 'Popular Courses' }} />
 
