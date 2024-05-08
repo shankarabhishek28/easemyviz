@@ -38,8 +38,8 @@ const page = () => {
                                 }}
                             />
                         </Avatar>
-                        <Box alignItems='center'><Text fontSize={28} fontWeight='600' fontFamily='Poppins-Regular' color='black'>Lina Paul</Text>
-                            <Text opacity={0.7} fontSize={14} color='black' fontFamily='Poppins-Regular'>@lenapaul123</Text>
+                        <Box alignItems='center'><Text fontSize={28} fontWeight='600' fontFamily='Poppins-Regular' color='black'>Gia Parker</Text>
+                            <Text opacity={0.7} fontSize={14} color='black' fontFamily='Poppins-Regular'>@giae121</Text>
                         </Box>
 
                     </Box>
@@ -60,7 +60,7 @@ const page = () => {
                                     isInvalid={false}
                                     isReadOnly={false}
                                 >
-                                    <InputField placeholder="Lina Paul" />
+                                    <InputField placeholder="Name" />
                                 </Input>
                             </Box>
                             <Text color={Colors.primary}>Save</Text>

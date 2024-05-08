@@ -50,7 +50,7 @@ const Page: React.FC = () => {
     return (
         <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: Colors.background }}>
             <StatusBar backgroundColor={'transparent'} barStyle="light-content" />
-            <ScrollView flex={1}>
+            <ScrollView showsVerticalScrollIndicator={false} flex={1}>
                 <View position='relative' h={imgHeight} width='100%'   >
                     {/* <Image width={containerWidth} height={containerHeight} }  alt='course Image' source={require('../../assets/images/mainCourse.png')} /> */}
                     <Image style={{ width: '100%', height: '100%' }} source={require('../../assets/images/mainCourse.png')} />
@@ -153,7 +153,7 @@ const Page: React.FC = () => {
                                                 }}
                                             />
                                         </Avatar>
-                                        <Box><Text fontSize={18} fontWeight='600' fontFamily='Poppins-Regular'>Lina Paul</Text>
+                                        <Box><Text fontSize={18} fontWeight='600' fontFamily='Poppins-Regular'>Gia Parker</Text>
                                             <Text opacity={0.7} fontSize={12} fontFamily='Poppins-Regular'>Director</Text></Box>
 
                                     </Box>
@@ -188,11 +188,7 @@ const Page: React.FC = () => {
                 </View>
             </ScrollView>
             <View alignSelf='center' width='80%' >
-                <Button borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enroll</Text>
-                    <Box flexDirection='row' gap={8} alignItems='center' >
-                        <FontAwesome5 color='white' name='hourglass' /><Text fontSize={12} color='white'>5 Feb 2024</Text>
-
-                    </Box>
+                <Button borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enquiry</Text>
                 </Button></View>
         </SafeAreaView>
 

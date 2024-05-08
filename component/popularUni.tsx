@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Colors } from '../styles/Colors'
 import { Avatar, Box, Text, View, AvatarFallbackText, AvatarImage, InputIcon, Input, Icon, SearchIcon, InputSlot, InputField, Button, Image, Pressable, ChevronRightIcon, ScrollView } from '@gluestack-ui/themed'
 import { Dimensions } from 'react-native'
-import { Link } from 'expo-router'
+import { Link,router } from 'expo-router'
 
 interface University {
   id: number;
   title: string;
-  img: NodeRequire;
+  img: any;
   locationTag: string;
 }
 
@@ -59,7 +59,7 @@ const PopularUniversity = () => {
       <Box height={366} width={356} gap={20} padding={16} borderRadius={12} backgroundColor={Colors.primary}>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           {Universities.slice(0, 2).map((item) => (
-            <Box key={item.id} height={156} borderRadius={8} width={156} backgroundColor='$white' gap={6} padding={8}>
+            <Pressable onPress={()=>router.push('/popular-university')} key={item.id} height={156} borderRadius={8} width={156} backgroundColor='$white' gap={6} padding={8}>
               <Image
                 width={containerWidth}
                 height={100}
@@ -68,13 +68,13 @@ const PopularUniversity = () => {
                 source={item.img}
               />
               <Text fontWeight='600' fontSize={14}>{item.title}</Text>
-            </Box>
+            </Pressable>
           ))}
         </View>
 
         <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
           {Universities.slice(2, 4).map((item) => (
-            <Box key={item.id} height={156} borderRadius={8} width={156} backgroundColor='$white' gap={6} padding={8}>
+            <Pressable onPress={()=>router.push('/popular-university')} key={item.id} height={156} borderRadius={8} width={156} backgroundColor='$white' gap={6} padding={8}>
               <Image
                 width={containerWidth}
                 height={100}
@@ -83,7 +83,7 @@ const PopularUniversity = () => {
                 source={item.img}
               />
               <Text fontWeight='600' fontSize={14}>{item.title}</Text>
-            </Box>
+            </Pressable>
           ))}
         </View>
 

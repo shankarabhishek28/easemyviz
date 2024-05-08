@@ -5,7 +5,7 @@ import { router } from 'expo-router'
 const Header = () => {
   return (
     <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'>
-      <Text fontSize={20} fontWeight='700' fontFamily='Poppins-Regular' >Welcome Lina</Text>
+      <Text fontSize={20} fontWeight='700' fontFamily='Poppins-Regular' >Welcome Gia</Text>
       <Pressable onPress={()=> router.push('/setting')} >
         <Avatar size='md'>
           <AvatarFallbackText></AvatarFallbackText>

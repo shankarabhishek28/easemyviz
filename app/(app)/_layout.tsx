@@ -1,22 +1,37 @@
 import { View, Text, TurboModuleRegistry } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Redirect, Stack } from 'expo-router'
 import { FontAwesome5, Ionicons } from '@expo/vector-icons'
+import { useAnimatedKeyboard } from 'react-native-reanimated'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../../store'
+import { restoreSession } from '../../store/slice/authSlice'
 
 const rootLayout = () => {
 
-  const session = true;
+
+const  { loading,userToken} = useSelector((state:RootState)=>state.auth)
+
+  const dispatch = useDispatch<AppDispatch>()
+
+  useEffect(()=>{
+    dispatch(restoreSession())
+  },[])
+
+  if(loading){
+    return null
+  }
 
 
-
-  if (!session) {
+  if (!userToken) {
     return <Redirect href={'/(auth)/onboard'} />
   }
 
 
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
+    <Stack initialRouteName='(tabs)' screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
@@ -27,14 +42,15 @@ const rootLayout = () => {
 
       <Stack.Screen name="news-details" options={{ headerShown: true, title: 'Latest News', presentation:'fullScreenModal', animation:'fade_from_bottom' }} />
 
+      <Stack.Screen name="country-list" options={{ headerShown: true, title: 'Countries', }} />
+
       <Stack.Screen name="popular-university" options={{
         headerShown: true, title: 'Universities', headerRight: () => (
           <Ionicons
-            name="filter" // Replace "icon-name" with the name of your FontAwesome5 icon
-            size={24} // Adjust the size of the icon as needed
-            // Customize the color of the icon
+            name="filter" 
+            size={24} 
             border
-            style={{ marginRight: 16 }} // Adjust the margin as needed
+            style={{ marginRight: 16 }} 
           />
         ),
       }} />

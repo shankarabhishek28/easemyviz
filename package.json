@@ -13,6 +13,7 @@
     "@gluestack-style/react": "^1.0.52",
     "@gluestack-ui/config": "^1.1.18",
     "@gluestack-ui/themed": "^1.1.22",
+    "@reduxjs/toolkit": "^2.2.3",
     "@types/react": "~18.2.45",
     "expo": "~50.0.14",
     "expo-constants": "~15.4.5",
@@ -20,6 +21,7 @@
     "expo-linear-gradient": "~12.7.2",
     "expo-linking": "~6.2.2",
     "expo-router": "~3.4.8",
+    "expo-secure-store": "~12.8.1",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-hook-form": "^7.51.3",
@@ -33,6 +35,7 @@
     "react-native-shadow-2": "^7.0.8",
     "react-native-svg": "^15.1.0",
     "react-native-timeline-flatlist": "^0.8.0",
+    "react-redux": "^9.1.2",
     "typescript": "^5.3.0"
   },
   "devDependencies": {

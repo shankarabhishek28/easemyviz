@@ -1,8 +1,10 @@
-import { View,Text, Box, Button } from '@gluestack-ui/themed'
+import { View,Text, Box, Button, Pressable } from '@gluestack-ui/themed'
 import React from 'react'
 import CustomAuthInput from '../custom/CustomAuthInput'
 import { useForm } from 'react-hook-form';
 import { Colors } from '../../styles/Colors';
+import { router } from 'expo-router';
+
 
 const ForgotPasswordForm = () => {
 
@@ -19,7 +21,7 @@ const ForgotPasswordForm = () => {
     })
 
     return (
-        <View flex={1} bg={Colors.background} borderTopLeftRadius={20} borderTopRightRadius={20} paddingHorizontal={20} width={"100%"} height={'100%'} paddingVertical={20}>
+        <Pressable onPress={()=>{}} flex={1} bg={Colors.background} borderTopLeftRadius={20} borderTopRightRadius={20} paddingHorizontal={20} width={"100%"} height={'100%'} paddingVertical={20}>
             <Box flex={1} >
 
                 <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', fontWeight: '700' }}>Forget Password ?</Text>
@@ -40,9 +42,8 @@ const ForgotPasswordForm = () => {
 
                 </Box>
             </Box>
-            <Button alignSelf={'center'} height={52} width={335} borderRadius={28}><Text color='white'>Send OTP</Text></Button>
-
-        </View>
+            <Button $active-opacity={0.7} bg={Colors.primary} onPress={()=>{router.replace('/verificationPage')}} alignSelf={'center'} height={52} width={'80%'} borderRadius={28}><Text color='white'>Send OTP</Text></Button>
+        </Pressable>
     )
 }
 

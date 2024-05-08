@@ -19,7 +19,7 @@ import { Colors } from '../styles/Colors';
 type ItemData = {
     id: string;
     title: string;
-    img: any; // Assuming img is a require statement, so it can be of any type
+    img: any; 
 };
 
 const DATA: ItemData[] = [

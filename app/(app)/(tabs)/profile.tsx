@@ -3,8 +3,17 @@ import { View, Text, Box, Icon, EditIcon, Avatar, AvatarFallbackText, AvatarImag
 import { ScrollView } from 'react-native'
 import { Colors } from '../../../styles/Colors'
 import { router } from 'expo-router'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../../store'
+import { signout } from '../../../store/slice/authSlice'
 
 const page = () => {
+
+    const dispatch = useDispatch<AppDispatch>()
+
+    const onLogoutPress = () => {
+        dispatch(signout())
+    } 
     return (
         <ScrollView style={{ backgroundColor: Colors.background }}>
             <View padding={20} gap={20}>
@@ -24,7 +33,7 @@ const page = () => {
                                     }}
                                 />
                             </Avatar>
-                            <Box><Text fontSize={16} fontWeight='600' fontFamily='Poppins-Regular' color='white' lineHeight={18}>Lina Paul</Text>
+                            <Box><Text fontSize={16} fontWeight='600' fontFamily='Poppins-Regular' color='white' lineHeight={18}>Gia Parker</Text>
                                 <Text opacity={0.7} fontSize={12} color='white' fontFamily='Poppins-Regular'>user._id</Text>
                             </Box>
 
@@ -78,7 +87,7 @@ const page = () => {
 
                     </Box>
                     
-                    <Box elevation={5} display='flex'  padding={20} borderRadius={12} backgroundColor={Colors.background} flexDirection='row' justifyContent='space-between' >
+                    <Pressable onPress={()=>{onLogoutPress()}} elevation={5} display='flex'  padding={20} borderRadius={12} backgroundColor={Colors.background} flexDirection='row' justifyContent='space-between' >
                         <Box flexDirection='row' gap={8} alignItems='center' >
                             <Icon as={CloseCircleIcon} color='red' w="$6" h="$6" />
                             <Box>
@@ -90,7 +99,7 @@ const page = () => {
                         <Icon as={ChevronRightIcon} color='black' w="$6" h="$6" />
 
 
-                    </Box>
+                    </Pressable>
                 </Box>
             </View>
 
