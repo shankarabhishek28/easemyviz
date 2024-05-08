@@ -46,11 +46,10 @@ const  { loading,userToken} = useSelector((state:RootState)=>state.auth)
       <Stack.Screen name="popular-university" options={{
         headerShown: true, title: 'Universities', headerRight: () => (
           <Ionicons
-            name="filter" // Replace "icon-name" with the name of your FontAwesome5 icon
-            size={24} // Adjust the size of the icon as needed
-            // Customize the color of the icon
+            name="filter" 
+            size={24} 
             border
-            style={{ marginRight: 16 }} // Adjust the margin as needed
+            style={{ marginRight: 16 }} 
           />
         ),
       }} />

@@ -94,7 +94,7 @@ const LoginForm = () => {
                     </Box>
                 </Box>
                 
-                <Button bg={Colors.primary} onPress={onPressLogin} alignSelf='center' height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>LogIn</Text></Button>
+                <Button $active-opacity={0.7} bg={Colors.primary} onPress={onPressLogin} alignSelf='center' height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>LogIn</Text></Button>
 
                 <Text alignSelf='center' textDecorationLine='underline' fontSize={12} fontFamily='Poppins-Regular' color='#25388D'>
                     Agree to Terms & conditions

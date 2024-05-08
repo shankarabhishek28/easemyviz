@@ -188,11 +188,7 @@ const Page: React.FC = () => {
                 </View>
             </ScrollView>
             <View alignSelf='center' width='80%' >
-                <Button borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enroll</Text>
-                    <Box flexDirection='row' gap={8} alignItems='center' >
-                        <FontAwesome5 color='white' name='hourglass' /><Text fontSize={12} color='white'>5 Feb 2024</Text>
-
-                    </Box>
+                <Button borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enquiry</Text>
                 </Button></View>
         </SafeAreaView>
 

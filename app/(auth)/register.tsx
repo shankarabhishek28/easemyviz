@@ -50,9 +50,10 @@ const Register = () => {
 
 
 
+    
 
 
-    <ScrollView flex={1} showsHorizontalScrollIndicator={false} width='100%' height='70%' backgroundColor='white' marginTop='10%' borderTopRightRadius={20} borderTopLeftRadius={20} padding={24} >
+    <ScrollView flex={1} showsVerticalScrollIndicator={false} width='100%' height='70%' backgroundColor='white' marginTop='10%' borderTopRightRadius={20} borderTopLeftRadius={20} padding={24} >
       <Box display='flex' height={500} width='100%' flexDirection='column' gap={24}>
         <Box>
           <Text style={{ fontSize: 16, fontFamily: 'Poppins-Regular', fontWeight: '700' }}>Create Your Account</Text>
@@ -92,12 +93,11 @@ const Register = () => {
           </View>
 
         </Box>
-        <Button onPress={onPressRegister} bg={Colors.primary} alignSelf='center' height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>Register</Text></Button>
+        <Button $active-opacity={0.7} onPress={onPressRegister} bg={Colors.primary} alignSelf='center' height={52} width={335} borderRadius={28} mt='6%'><Text color='white'>Register</Text></Button>
 
         <Text alignSelf='center' textDecorationLine='underline' fontSize={12} fontFamily='Poppins-Regular' color='#25388D'>
           Agree to Terms & conditions
         </Text>
-
       </Box>
     </ScrollView>
 
