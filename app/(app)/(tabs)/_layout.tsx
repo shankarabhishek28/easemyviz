@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Dimensions } from 'react-native';
 import { Tabs, router} from 'expo-router'; 
 import { Colors } from '../../../styles/Colors';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { FontAwesome5 } from '@expo/vector-icons'; // Import FontAwesome5 component
 import { View, Text, Pressable } from '@gluestack-ui/themed';
 
@@ -15,8 +16,10 @@ type TabIconProps = {
 const TabIcon: React.FC<TabIconProps> = ({title, name, color, focused }) => {
     return (
         <View opacity={focused ? '$100' : '$50'} display='flex' alignItems='center' justifyContent='space-around'>
-            
-            <FontAwesome5 name={name} size={22}  color='white' solid />
+          {title === 'Enquiry' ? <MaterialCommunityIcons name="comment-question" size={24} color="white" />
+ :
+        <FontAwesome5 name={name} size={22} color='white' solid />
+    }
             
            
             
@@ -105,16 +108,16 @@ const TabsLayout: React.FC = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='notification'
+                    name='enquiry'
                     options={{
-                        title: 'Notification',
+                        title: 'Enquiry',
                         headerShown: true,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
-                                name="bell" // Replace with the appropriate FontAwesome5 icon name
+                                name="question" // Replace with the appropriate FontAwesome5 icon name
                                 color={color}
                                 focused={focused}
-                                title='Notifications'
+                                title='Enquiry'
 
                             />
                         )

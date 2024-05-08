@@ -22,7 +22,7 @@ const PagerViewComp = () => {
         },
         {
             id: 2,
-            img: require('../assets/images/topUni1.png')
+            img: require('../assets/images/popu-lg-2.png')
         },
         {
             id: 3,
@@ -36,7 +36,7 @@ const PagerViewComp = () => {
 
             <PagerView style={styles.viewPager} initialPage={0} scrollEnabled onPageSelected={(event) => setCurrentPage(event.nativeEvent.position)}>
                 {Slides.map((item) => {
-                    return <View key={item.id} style={[styles.page, { backgroundColor: 'red', borderRadius: 12 }]} >
+                    return <View key={item.id} style={[styles.page, { backgroundColor: 'black', borderRadius: 12 }]} >
                         <Image width={367} height={178} alt='university image' source={item.img} />
 
                     </View>
@@ -44,7 +44,7 @@ const PagerViewComp = () => {
 
 
             </PagerView>
-            <Box width='55%' position='absolute' left={16} top={24} padding={0} ><Text fontWeight='600' fontSize={24} color='white' fontFamily='Poppins-Regular'>Top Universities in USA</Text>
+            <Box width='55%' position='absolute' left={16} top={24} padding={0} ><Text  fontSize={24} color='white' fontFamily='Poppins-SemiBold'>Top Universities in USA</Text>
                 <Box width='55%' top={0}>
                     <Text fontWeight='400' fontSize={16} color='white' fontFamily='Poppins-Regular'>Register now don't miss it</Text></Box>
 

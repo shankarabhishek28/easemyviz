@@ -14,7 +14,7 @@ import {
 import { Shadow } from 'react-native-shadow-2';
 import { Avatar, Box, Text, View, AvatarFallbackText, AvatarImage, InputIcon, Input, Icon, SearchIcon, InputSlot, InputField, Button, Image, Pressable, ChevronRightIcon, ScrollView, ArrowLeftIcon } from '@gluestack-ui/themed'
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context'
-import { Colors } from '../../../styles/Colors';
+import { Colors } from '../../styles/Colors';
 
 
 
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
   item: {
     display: 'flex',
     flexDirection: 'row',
-    marginBottom: 34,
+    marginBottom: 24,
     padding: 20,
     gap: 16,
     borderRadius: 14,

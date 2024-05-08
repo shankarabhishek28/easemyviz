@@ -49,9 +49,9 @@ const PopularUniversity = () => {
   return (
     <View gap={24}>
       <Box flexDirection='row' alignItems='center' justifyContent='space-between'>
-      <Text fontSize={16} fontWeight='700'>Popular Universities</Text>
+      <Text fontSize={16} fontFamily='Poppins-Bold'>Popular Universities</Text>
       <Box flexDirection='row' alignItems='center'>
-        <Link href='/(app)/popular-university'  ><Text fontSize={12} fontWeight='500' color={Colors.primary} >View More</Text></Link>
+        <Link href='/(app)/popular-university'  ><Text fontSize={12} fontFamily='Poppins-Medium' color={Colors.primary} >View More</Text></Link>
         <Icon as={ChevronRightIcon} color={Colors.primary} w="$4" h="$4" />
       </Box>
       </Box>
@@ -67,7 +67,7 @@ const PopularUniversity = () => {
                 alt='unioversity Image'
                 source={item.img}
               />
-              <Text fontWeight='600' fontSize={14}>{item.title}</Text>
+              <Text fontFamily='Poppins-SemiBold' fontSize={14}>{item.title}</Text>
             </Pressable>
           ))}
         </View>
@@ -82,7 +82,7 @@ const PopularUniversity = () => {
                 alt='unioversity Image'
                 source={item.img}
               />
-              <Text fontWeight='600' fontSize={14}>{item.title}</Text>
+              <Text fontFamily='Poppins-SemiBold' fontWeight='600' fontSize={14}>{item.title}</Text>
             </Pressable>
           ))}
         </View>

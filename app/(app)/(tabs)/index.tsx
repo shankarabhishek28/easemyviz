@@ -35,7 +35,7 @@ const page = () => {
                                 <InputSlot pl="$3">
                                     <InputIcon as={SearchIcon} />
                                 </InputSlot>
-                                <InputField placeholder="Search..." />
+                                <InputField fontFamily='Poppins-Regular' placeholder="Search..." />
                             </Input>
                         </Box>
                         <PagerViewComp />

@@ -54,7 +54,7 @@ const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
     <Pressable gap={16} onPress={()=>router.push('/(app)/course')} style={[styles.item, { backgroundColor }]}>
         <Image width={196} height={113} borderRadius={8} alt='course image' source={item.img} />
         <Box>
-            <Text style={[styles.title, { color: textColor, fontWeight: '600' }]}>{item.title}</Text>
+            <Text style={[styles.title, { color: textColor, fontFamily:'Poppins-Medium'}]}>{item.title}</Text>
             <Text color='#8D989D' fontSize={14} fontWeight='500' fontFamily='Poppins-Regular'>Adelia Stebli, Charlie Puth</Text>
             <Box marginTop={8} flexDirection='row' alignItems='center' gap={10}>
                 <FontAwesome5 name="users" size={14} color='#BCC7D1' />
@@ -90,9 +90,9 @@ const CourseList = () => {
     return (
         <Box>
             <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between' paddingLeft={20} paddingRight={20} >
-                <Text fontSize={16} fontWeight='700'>Popular Courses</Text>
+                <Text fontSize={16} fontFamily='Poppins-Bold'>Popular Courses</Text>
                 <Box flexDirection='row' alignItems='center'>
-                    <Button variant='link' onPress={handleClick}><Text fontSize={12} fontWeight='500' color={Colors.primary} >View More</Text></Button>
+                    <Button variant='link' onPress={handleClick}><Text fontSize={12} fontFamily='Poppins-Medium' color={Colors.primary} >View More</Text></Button>
                     <Icon as={ChevronRightIcon} color={Colors.primary}  w="$4" h="$4" />
                 </Box>
             </Box>

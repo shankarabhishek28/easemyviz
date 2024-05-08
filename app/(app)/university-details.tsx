@@ -4,7 +4,7 @@ import { Box, Button, ChevronLeftIcon, Icon, ScrollView, StatusBar, View } from 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Colors } from '../../styles/Colors';
 import { Text } from '@gluestack-ui/themed';
-import {  FontAwesome5 } from '@expo/vector-icons';
+import {  AntDesign, FontAwesome5 } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { router, useLocalSearchParams, useRouter } from 'expo-router';
 
@@ -76,7 +76,7 @@ const Page: React.FC = () => {
         </Button>
       </Box>
       <Box flex={2.5} position='relative'>
-        <ScrollView flex={1} bottom={20} bg={Colors.background} borderTopLeftRadius={10} borderTopRightRadius={10}>
+        <ScrollView flex={1} bottom={20} bg={Colors.background} borderTopLeftRadius={10} borderTopRightRadius={10} paddingLeft={20} paddingRight={20} paddingTop={10} >
           <Box paddingTop={12}>
             <FlatList
               data={dataAr}
@@ -86,24 +86,45 @@ const Page: React.FC = () => {
             />
           </Box>
 
-          <Text>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo ipsa eveniet ut similique libero hic, cum necessitatibus aliquid aut, esse dolorem tempore unde quam voluptas consequatur sequi omnis iusto magnam magni tempora velit id tenetur quas. Voluptatum distinctio soluta est voluptate blanditiis non itaque qui veniam tenetur voluptatem laborum, veritatis possimus error cumque repellendus fuga iure doloremque quo aliquid deleniti assumenda eum aut. Repellendus quia nostrum cumque dolorum reprehenderit odio dolore, labore, voluptatibus amet dolorem eaque suscipit quae quas saepe? Dolorem pariatur impedit similique id distinctio quam, nemo obcaecati eligendi, neque rem reprehenderit sequi eveniet. Facilis illum rerum, tempora ullam nihil ea, aperiam veritatis cum pariatur quidem placeat necessitatibus non fugit voluptatum blanditiis perferendis culpa, recusandae eligendi sed dignissimos doloremque dolores. Blanditiis neque officia, est, rem, numquam quo enim sapiente placeat fuga quaerat iure amet aliquid consectetur exercitationem odit totam provident asperiores veritatis possimus cupiditate reprehenderit voluptates repellendus. Incidunt dicta in sunt adipisci perspiciatis omnis blanditiis saepe harum deleniti quasi sequi repellendus cum officiis, aspernatur voluptatibus eius atque quo repellat accusamus nisi! Modi asperiores ab itaque, iste eligendi dolores quidem aliquam quo eius delectus nulla dolorem? Cum vero minima mollitia veritatis saepe esse, aut itaque illo reprehenderit quasi sit accusantium modi? Illo, numquam nobis? Totam obcaecati quam itaque reiciendis accusamus exercitationem, pariatur amet nulla a sunt quisquam! Animi incidunt adipisci distinctio iure cumque aspernatur. Accusantium repellendus enim architecto repellat aut omnis sunt eius, nam aliquid explicabo ratione doloremque doloribus quas asperiores ab distinctio quibusdam officia rerum modi nesciunt quod deserunt minus culpa sapiente! Error, et! Nisi ut officiis sequi tempora modi, odio a voluptatem repellendus omnis ipsam rerum aperiam dignissimos saepe totam inventore praesentium, et debitis beatae cumque! Nostrum tempore reprehenderit est velit necessitatibus sapiente neque adipisci ex eveniet aut rem odit soluta maxime voluptatum illo repudiandae, voluptatibus perspiciatis. Quo inventore recusandae iusto deserunt. Dignissimos cumque, impedit magnam temporibus eveniet voluptate adipisci aliquam, atque accusantium facilis sunt pariatur doloremque, ex expedita ipsum rem sint consectetur esse id. Distinctio aliquam eligendi consequuntur vel commodi adipisci provident, quaerat ex id eius enim possimus deserunt exercitationem voluptatum soluta! Quisquam distinctio aperiam quod. Vitae consequatur voluptatum fuga voluptatem incidunt tenetur magnam nihil non quam eveniet, distinctio porro eius cum est quasi, labore reiciendis ab, quisquam deleniti eos. Aliquid qui blanditiis saepe quae possimus debitis laboriosam accusamus! Dignissimos, qui pariatur voluptates obcaecati, magni ex a nobis, consequuntur tempore tenetur nemo. Repellat perspiciatis, dolor fugit error rerum ea perferendis, illo recusandae voluptas quaerat, pariatur nulla earum. Officiis ea placeat culpa iusto iste laudantium perspiciatis, dolorem quia esse voluptas adipisci labore numquam mollitia quibusdam laboriosam ducimus autem tempora dolor unde exercitationem? Obcaecati labore nesciunt, facere unde, omnis magni perferendis saepe ut eum asperiores incidunt repellendus fugit error corporis exercitationem quae, animi eius! Totam earum saepe atque tempora numquam quo voluptas incidunt consectetur repellendus sequi impedit, in dolores nostrum, soluta obcaecati. Deleniti ipsa quia est. Quae, ullam sequi minima a fugiat, saepe adipisci corrupti eum nihil officia iste porro, dolorum reprehenderit optio quod deserunt vero? Officia, porro sunt.</Text>
-
-          <Box flexDirection='row' justifyContent='space-between'>
-            <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
-              <FontAwesome5 size={20} name='comment' />
-              <Text>350 reviews</Text>
-
+          <Box mt={20} flexDirection='row' justifyContent='space-between'>
+            <Text fontSize={24} fontFamily='Poppins-Bold'>University Name</Text>
+            <Box backgroundColor='rgba(76, 110, 215, 0.25)' alignItems='center' borderRadius={6} justifyContent='center' padding={8}  >
+              <Text fontSize={12} fontFamily='Poppins-Regular' color={Colors.primary} opacity={1}>USA</Text>
             </Box>
-            <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
-              <Feather name="users" size={20} color="black" />
-              <Text>45 students</Text>
-
-            </Box>
-
           </Box>
+          <Box mt={20} gap={8}>
+            <Text fontSize={18} fontFamily='Poppins-SemiBold'>Description</Text>
+            <Text fontSize={14} fontFamily='Poppins-Regular' textAlign='justify'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Habitasse dolor etiam sed ante donec quis sapien. Malesuada rhoncus nullam eleifend lorem egestas mauris massa massa.</Text>
+          </Box>
+          <Box mt={20} gap={12}>
+            <Text fontSize={18} fontFamily='Poppins-SemiBold'>Information</Text>
+            <Box width='85%' gap={16}>
+              <Box flexDirection='row' justifyContent='space-between'>
+                <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
+                  <Feather name="map-pin" size={20} color="black" />
+                  <Text fontFamily='Poppins-Regular' fontSize={14}>California</Text>
+                </Box>
+                <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
+                  <AntDesign name="book" size={20} color="black" />
+                  <Text fontFamily='Poppins-Regular' fontSize={14}>Ranking(4/20) </Text>
+                </Box>
+              </Box>
+              <Box flexDirection='row' justifyContent='space-between'>
+                <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
+                  <FontAwesome5 size={20} name='comment' />
+                  <Text fontFamily='Poppins-Regular' fontSize={14}>350 reviews</Text>
+                </Box>
+                <Box width='50%' flexDirection='row' alignItems='center' gap={12}>
+                  <Feather name="users" size={20} color="black" />
+                  <Text fontFamily='Poppins-Regular' fontSize={14}>45 students</Text>
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+        
 
-          <Box>
-            <Text fontSize={18} fontWeight='600'>Fee Structure</Text>
+          <Box mt={20} gap={16} mb={60}>
+            <Text fontSize={18} fontFamily='Poppins-SemiBold'>Fee Structure</Text>
             <Box flexDirection='row' alignItems='center' justifyContent='space-between'>
               <Text fontSize={18} color={Colors.primary}>$120</Text>
               <Box backgroundColor='rgba(76, 110, 215, 0.25)' alignItems='center' borderRadius={6} justifyContent='center' padding={8} flexDirection='row' gap={8}>
@@ -116,7 +137,7 @@ const Page: React.FC = () => {
         </ScrollView>
 
       </Box>
-      <Button mb={10} mx={10}  height={50}><Text color='white'>Apply Now</Text></Button>
+      <Button mb={16} mx={20}   height={50}><Text color='white'>Apply Now</Text></Button>
 
     </View>
   );

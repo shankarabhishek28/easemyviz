@@ -65,7 +65,7 @@ const Page: React.FC = () => {
                         <Box key={item.id} gap={24} marginBottom={20}>
                             <Box flexDirection='row' justifyContent='space-between' >
                                 <Box backgroundColor='black' opacity={1} width={72} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
-                                    <Text color='white' fontSize={14}>Original</Text>
+                                    <Text color='white' fontSize={14} fontFamily='Poppins-Regular'>Original</Text>
 
                                 </Box>
                                 <Box>
@@ -76,7 +76,7 @@ const Page: React.FC = () => {
 
 
                             <Box gap={10}>
-                                <Text fontSize={28} fontWeight='700' color='#3A3F4D' fontFamily='Poppins-Regular'>{item.title}</Text>
+                                <Text fontSize={28}  color='#3A3F4D' fontFamily='Poppins-Bold'>{item.title}</Text>
                                 <Text fontFamily='Poppins-Regular' color='#737373'>{item.author}</Text>
                             </Box>
                             <Box flexDirection='row' alignItems='center'>
@@ -90,38 +90,38 @@ const Page: React.FC = () => {
                                 </Box>
                             </Box>
                             <Box gap={10}>
-                                <Text fontSize={18} fontWeight='700' fontFamily='Poppins-Regular'>About This Class</Text>
-                                <Text>In this class i’ll explain how you can use principle to make a pretty cool video effect.</Text>
+                                <Text fontSize={18}  fontFamily='Poppins-SemiBold'>About This Class</Text>
+                                <Text fontFamily="Poppins-Regular">In this class i’ll explain how you can use principle to make a pretty cool video effect.</Text>
                             </Box>
                             <Box gap={10}>
-                                <Text fontSize={18} fontWeight='700' fontFamily='Poppins-Regular'>Schedule</Text>
+                                <Text fontSize={18} fontFamily='Poppins-SemiBold'>Schedule</Text>
                                 <Box display='flex' flexDirection='row' alignItems='center' gap={10} >
                                     <FontAwesome5 size={16} opacity={0.5} name='calendar' />
-                                    <Text opacity={0.7} fontSize={14} >10 Feb - 20 Feb</Text>
+                                    <Text fontFamily='Poppins-Regular' opacity={0.7} fontSize={14} >10 Feb - 20 Feb</Text>
 
                                 </Box>
                             </Box>
                             <Box gap={10}>
-                                <Text fontSize={18} fontWeight='700' color={Colors.primary} fontFamily='Poppins-Regular'>Skills</Text>
+                                <Text fontSize={18} color={Colors.primary} fontFamily='Poppins-SemiBold'>Skills</Text>
                                 <Box display='flex' flexDirection='row' alignItems='center' gap={10} >
-                                    <Box backgroundColor='black' opacity={0.8} width={72} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
-                                        <Text color='white'>Camera</Text>
+                                    <Box backgroundColor='black' opacity={0.8} flex={1} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
+                                        <Text color='white' fontFamily='Poppins-Regular'>Camera</Text>
                                     </Box>
-                                    <Box backgroundColor='black' opacity={0.8} width={72} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
-                                        <Text color='white'>Shooting</Text>
+                                    <Box backgroundColor='black' opacity={0.8} flex={1} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
+                                        <Text color='white' fontFamily='Poppins-Regular'>Shooting</Text>
                                     </Box>
-                                    <Box backgroundColor='black' opacity={0.8} width={72} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
-                                        <Text color='white'>Lenses</Text>
+                                    <Box backgroundColor='black' opacity={0.8} flex={1} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
+                                        <Text color='white' fontFamily='Poppins-Regular'>Lenses</Text>
                                     </Box>
-                                    <Box backgroundColor='black' opacity={0.8} width={72} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
-                                        <Text color='white'>Creative</Text>
+                                    <Box backgroundColor='black' opacity={0.8} flex={1} height={28} alignItems='center' justifyContent='center' borderRadius={8}>
+                                        <Text color='white' fontFamily='Poppins-Regular'>Creative</Text>
                                     </Box>
 
                                 </Box>
                             </Box>
                             <Box gap={16}>
 
-                                <Text fontSize={18} fontWeight='700' fontFamily='Poppins-Regular'>Instructor</Text>
+                                <Text fontSize={18} fontFamily='Poppins-SemiBold'>Instructor</Text>
                                 <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between' gap={10}>
 
                                     <Box display='flex' flexDirection='row' alignItems='center' gap={10} >
@@ -163,7 +163,7 @@ const Page: React.FC = () => {
 
                             </Box>
                             <Box gap={10}>
-                                <Text fontSize={18} fontWeight='700' fontFamily='Poppins-Regular'>In this course</Text>
+                                <Text fontSize={18}  fontFamily='Poppins-SemiBold'>In this course</Text>
 
                                 <Box>
                                     <Timeline
@@ -175,7 +175,7 @@ const Page: React.FC = () => {
                                         descriptionStyle={{ color: 'gray', marginBottom: 20, fontFamily: 'Poppins-Regular' }}
                                         timeContainerStyle={{ display: 'none' }}
                                         circleColor='#BCC7D1'
-
+                                        titleStyle={{fontWeight:'100',fontFamily:'Poppins-Bold'}}
                                         lineColor='#BCC7D1'
                                     />
                                 </Box>

@@ -53,7 +53,7 @@ const Page = () => {
     return (
         <ScrollView bg={'$white'}>
             {country &&
-            <Text px={20} fontWeight='$bold' fontSize={'$lg'} bold color={'$black'} mt={20}>{country} Universities</Text>
+            <Text px={20}  fontSize={'$lg'} fontFamily='Poppins-Bold' color={'$black'} mt={20}>{country} Universities</Text>
             }
             <View height='100%' width='100%' marginBottom={40}>
                 {demoDataArray.map((item) => (
@@ -87,8 +87,8 @@ const Page = () => {
                         >
 
                             <Box bottom={12} left={10} position={'absolute'}>
-                                <Text color='white' fontWeight='700' fontFamily='Poppins-Regular' fontSize={18}>{item.title}</Text>
-                                <Text color='white' fontSize={12} fontWeight='700' fontFamily='Poppins-Regular'>{item.subtitle}</Text>
+                                <Text color='white'  fontFamily='Poppins-SemiBold' fontSize={18}>{item.title}</Text>
+                                <Text color='white' fontSize={12}  fontFamily='Poppins-Medium'>{item.subtitle}</Text>
                             </Box>
                         </Box>
                             

@@ -58,12 +58,13 @@ type ItemProps = {
 
 const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
     <Pressable onPress={()=>router.push('/(app)/news-details')} style={[styles.item, { backgroundColor }]}>
-        <Image width={139} height={114} borderRadius={8} alt='course image' source={item.img} />
-        <Box justifyContent='space-around'>
+        <Image flex={1} height={114} borderRadius={8} alt='course image' source={item.img} />
+        <Box flex={1} justifyContent='space-around'>
             <Box>
-                <Text fontSize={12}>Lorem</Text>
-                <Text style={[styles.title, { color: textColor, fontWeight: '600' }]}>{item.title.length > 11 ? `${item.title.substring(0, 28)}` : item.title}</Text>
-                <Text style={[styles.title, { color: textColor, fontWeight: '600' }]}>{item.title.length > 11 ? `${item.title.substring(28, 42)}...` : item.title}</Text>
+                <Text fontSize={12} fontFamily='Poppins-Regular'>Lorem</Text>
+                <Text  style={[styles.title, { color: textColor, fontFamily:'Poppins-SemiBold' }]}>{item.title.length > 11 ? `${item.title.substring(0, 20)}` : item.title}</Text>
+                <Text style={[styles.title, { color: textColor, fontFamily:'Poppins-SemiBold' }]}>{item.title.length > 11 ? `${item.title.substring(22, 30)}...` : item.title}</Text>
+
 
             </Box>
 
@@ -105,9 +106,9 @@ const News = () => {
     return (
         <Box gap={16} marginBottom='24%'width='100%'  >
             <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'   >
-                <Text fontSize={16} fontWeight='700'>News</Text>
+                <Text fontSize={16} fontFamily='Poppins-Bold'>News</Text>
                 <Box flexDirection='row' alignItems='center'>
-                    <Button  onPress={()=>router.push('/(app)/latest-news')} variant='link'><Text fontSize={12} fontWeight='500' color={Colors.primary} >See All</Text><Icon as={ChevronRightIcon} color={Colors.primary}  w="$4" h="$4" /></Button>
+                    <Button  onPress={()=>router.push('/(app)/latest-news')} variant='link'><Text fontSize={12} fontFamily='Poppins-Medium' color={Colors.primary} >See All</Text><Icon as={ChevronRightIcon} color={Colors.primary}  w="$4" h="$4" /></Button>
                     
                 </Box>
             </Box>

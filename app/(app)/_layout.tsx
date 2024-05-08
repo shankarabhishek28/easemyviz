@@ -34,11 +34,12 @@ const  { loading,userToken} = useSelector((state:RootState)=>state.auth)
       <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="(tabs)" />
-      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="popular-courses" options={{ headerShown: true, title: 'Popular Courses' }} />
 
       <Stack.Screen name="latest-news" options={{ headerShown: true, title: 'Latest News' }} />
+      <Stack.Screen name="notification" options={{ headerShown: true, title: 'Notifications' }} />
+
 
       <Stack.Screen name="news-details" options={{ headerShown: true, title: 'Latest News', presentation:'fullScreenModal', animation:'fade_from_bottom' }} />
 

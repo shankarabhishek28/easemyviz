@@ -14,6 +14,10 @@ const appLayout = () => {
     const loadFont = async () => {
       await Font.loadAsync({
         'Poppins-Regular': require('../assets/fonts/Poppins/Poppins-Regular.ttf'),
+        'Poppins-Bold': require('../assets/fonts/Poppins/Poppins-Bold.ttf'),
+        'Poppins-SemiBold': require('../assets/fonts/Poppins/Poppins-SemiBold.ttf'),
+        'Poppins-ExtraBold': require('../assets/fonts/Poppins/Poppins-ExtraBold.ttf'),
+        'Poppins-Medium': require('../assets/fonts/Poppins/Poppins-Medium.ttf'),
       });
       setFontLoaded(true);
     };

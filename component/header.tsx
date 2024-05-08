@@ -1,13 +1,21 @@
 import React from 'react'
 import { Avatar, Box, Text, View, AvatarFallbackText, AvatarImage, InputIcon, Input, Icon, SearchIcon, InputSlot, InputField, Button, Image, Pressable, ChevronRightIcon, ScrollView } from '@gluestack-ui/themed'
 import { router } from 'expo-router'
+import { FontAwesome5 } from '@expo/vector-icons'
+import { Colors } from '../styles/Colors'
 
 const Header = () => {
   return (
     <Box display='flex' flexDirection='row' alignItems='center' justifyContent='space-between'>
-      <Text fontSize={20} fontWeight='700' fontFamily='Poppins-Regular' >Welcome Gia</Text>
+      <Text fontSize={20}  fontFamily='Poppins-Bold' >Welcome Gia</Text>
+      <Box flexDirection='row' alignItems='center'>
+      <Pressable  onPress={()=> router.push('/notification')} mr={22}>
+      <FontAwesome5 name='bell' size={26}  color={Colors.primary} solid  />
+      <Box position='absolute' width={14} borderRadius={50} backgroundColor='red' alignItems='center' right={-3} top={-2}><Text fontSize={10} color='white'>1</Text></Box>
+
+      </Pressable>
       <Pressable onPress={()=> router.push('/setting')} >
-        <Avatar size='md'>
+        <Avatar size='sm'>
           <AvatarFallbackText></AvatarFallbackText>
           <AvatarImage
             alt='a man'
@@ -17,6 +25,8 @@ const Header = () => {
           />
         </Avatar>
       </Pressable>
+      </Box>
+
 
     </Box>
   )
