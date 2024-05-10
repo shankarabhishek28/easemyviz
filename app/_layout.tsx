@@ -6,6 +6,8 @@ import {  SafeAreaProvider } from 'react-native-safe-area-context'
 import * as Font from 'expo-font';
 import { Provider } from 'react-redux'
 import { store } from '../store'
+import { StatusBar } from 'react-native'
+
 const appLayout = () => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
@@ -34,6 +36,8 @@ const appLayout = () => {
 
     <SafeAreaProvider>
       <GluestackUIProvider config={config}>
+      <StatusBar backgroundColor={'black'} barStyle='light-content' />
+
         <Slot />
       </GluestackUIProvider>
     </SafeAreaProvider>

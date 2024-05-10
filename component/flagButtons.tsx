@@ -35,12 +35,12 @@ const FlagButtons = () => {
                             onPress={() => { router.push({ pathname: '/popular-university', params: { country: "Germany" } }) }}
                             elevation={5}
                             borderRadius={12}
-                            height={74}
-                            width={156}
+                            height={84}
+                            width={162}
                             backgroundColor='white'
                             marginRight={8}
                         >
-                            <Box flexDirection='row' alignItems='center' justifyContent='center' gap={16}>
+                            <Box flexDirection='row' alignItems='center' justifyContent='center' gap={12}>
                                 <Image height={40} width={40} alt='flag' source={require('../assets/images/germany.png')} style={{ alignSelf: 'center' }} />
                                 <Text style={{ textAlign: 'center', fontSize: 14, fontFamily: 'Poppins-Regular' }}>Germany</Text>
                             </Box>
@@ -49,12 +49,12 @@ const FlagButtons = () => {
                             onPress={() => { router.push({ pathname: '/popular-university', params: { country: "America" } }) }}
                             elevation={5}
                             borderRadius={12}
-                            height={74}
-                            width={156}
+                            height={84}
+                            width={162}
                             backgroundColor='white'
                             marginRight={8}
                         >
-                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={16} >
+                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={12} >
                                 <Image height={40} width={40} alt='flag' source={require('../assets/images/usa.png')} style={{ alignSelf: 'center' }} />
                                 <Text style={{  textAlign: 'center', fontSize: 14, fontFamily:'Poppins-Regular' }}>America</Text>
                             </Box>
@@ -66,12 +66,12 @@ const FlagButtons = () => {
                             onPress={() => { router.push({ pathname: '/popular-university', params: { country: "Germany" } }) }}
                             elevation={5}
                             borderRadius={12}
-                            height={74}
-                            width={156}
+                            height={84}
+                            width={162}
                             backgroundColor='white'
                             marginRight={8}
                         >
-                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={16} >
+                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={12} >
                                 <Image height={40} width={40} alt='flag' source={require('../assets/images/canada.png')} style={{ alignSelf: 'center' }} />
                                 <Text style={{ fontFamily:'Poppins-Regular', textAlign: 'center', fontSize: 14 }}>Canada</Text>
                             </Box>
@@ -80,12 +80,12 @@ const FlagButtons = () => {
                             onPress={() => { router.push({ pathname: '/popular-university', params: { country: "America" } }) }}
                             elevation={5}
                             borderRadius={12}
-                            height={74}
-                            width={156}
+                            height={84}
+                            width={162}
                             backgroundColor='white'
                             marginRight={8}
                         >
-                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={16} >
+                            <Box display='flex' flexDirection='row' alignItems='center' justifyContent='center' gap={12} >
                                 <Image height={40} width={40} alt='flag' source={require('../assets/images/Aus.png')} style={{ alignSelf: 'center' }} />
                                 <Text style={{ fontFamily:'Poppins-Regular', textAlign: 'center', fontSize: 14 }}>Australia</Text>
                             </Box>

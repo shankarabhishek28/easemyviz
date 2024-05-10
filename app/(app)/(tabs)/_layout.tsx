@@ -16,7 +16,7 @@ type TabIconProps = {
 const TabIcon: React.FC<TabIconProps> = ({title, name, color, focused }) => {
     return (
         <View opacity={focused ? '$100' : '$50'} display='flex' alignItems='center' justifyContent='space-around'>
-          {title === 'Enquiry' ? <MaterialCommunityIcons name="comment-question" size={24} color="white" />
+          {title === 'Enquiries' ? <MaterialCommunityIcons name="comment-question" size={24} color="white" />
  :
         <FontAwesome5 name={name} size={22} color='white' solid />
     }
@@ -86,38 +86,34 @@ const TabsLayout: React.FC = () => {
                     }}
                 />
                 <Tabs.Screen
-                    name='chatBot'
+                    name='chats-list'
                     options={{
-                        title: 'ChatBot',
-                        tabBarStyle: { display: 'none' }, 
+                        title: 'Chat List',
+                        // tabBarStyle: { display: 'none' }, 
                         headerShown: true,
-                        headerLeft: () => (
-                            <Pressable onPress={() => router.push('..')} >
-                                <FontAwesome5 name="arrow-left" size={20} marginLeft={20} color="black" />
-                            </Pressable>
-                        ),
+                    
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 name="comment" // Replace with the appropriate FontAwesome5 icon name
                                 color={color}
                                 focused={focused}
-                                title='ChatBot'
+                                title='Chat'
 
                             />
                         )
                     }}
                 />
                 <Tabs.Screen
-                    name='enquiry'
+                    name='enquiries'
                     options={{
-                        title: 'Enquiry',
+                        title: 'Enquiries',
                         headerShown: true,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 name="question" // Replace with the appropriate FontAwesome5 icon name
                                 color={color}
                                 focused={focused}
-                                title='Enquiry'
+                                title='Enquiries'
 
                             />
                         )
@@ -127,7 +123,7 @@ const TabsLayout: React.FC = () => {
                     name='profile'
                     options={{
                         title: 'Settings',
-                        headerShown: true,
+                        headerShown: false,
                         tabBarIcon: ({ color, focused }) => (
                             <TabIcon
                                 name="user" // Replace with the appropriate FontAwesome5 icon name

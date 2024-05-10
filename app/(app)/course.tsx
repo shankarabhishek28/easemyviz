@@ -188,7 +188,8 @@ const Page: React.FC = () => {
                 </View>
             </ScrollView>
             <View alignSelf='center' width='80%' >
-                <Button borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enquiry</Text>
+                <Button onPress={() => { router.push({ pathname: '/enquiries', params: { title: "Photography course", imgSrc:require('../../assets/images/mainCourse.png') as string } }) }}
+ borderRadius={12} height={64} my={10} flexDirection='column'><Text fontWeight='600' fontSize={18} fontFamily='Poppins-Regular' color='white'>Enquiry</Text>
                 </Button></View>
         </SafeAreaView>
 

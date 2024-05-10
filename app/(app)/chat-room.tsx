@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, FlatList, ScrollView, TextareaInput, Input, InputField, Box, Button } from '@gluestack-ui/themed';
-import { Colors } from '../../../styles/Colors';
 import { TextInput } from 'react-native';
+import { Colors } from '../../styles/Colors';
+import { SafeAreaView } from 'react-native-safe-area-context';
 interface Message {
   id: string;
   sender: 'user' | 'receiver';
@@ -44,7 +45,8 @@ const ChatPage: React.FC = () => {
 
   return (
     <>
-      <ScrollView>
+    
+    <ScrollView>
         <View style={{ flex: 1 }}>
           <FlatList
             data={messages}
@@ -56,6 +58,8 @@ const ChatPage: React.FC = () => {
         </View>
 
       </ScrollView>
+    
+      
       <Box width='100%' height={90} display='flex' marginBottom={10} flexDirection='row' alignItems='center' justifyContent='space-evenly'>
         <Input
           backgroundColor='#E0E0E0'

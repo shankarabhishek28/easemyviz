@@ -31,17 +31,21 @@ const  { loading,userToken} = useSelector((state:RootState)=>state.auth)
 
   return (
     <Stack initialRouteName='(tabs)' screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="(tabs)" />
+      <Stack.Screen name="university-details" options={{ headerShown: false, title: 'news details' }} />
 
       <Stack.Screen name="popular-courses" options={{ headerShown: true, title: 'Popular Courses' }} />
+      <Stack.Screen name="chat-room" options={{ headerShown: true, title: 'Chat Room' }} />
+
 
       <Stack.Screen name="latest-news" options={{ headerShown: true, title: 'Latest News' }} />
       <Stack.Screen name="notification" options={{ headerShown: true, title: 'Notifications' }} />
 
 
       <Stack.Screen name="news-details" options={{ headerShown: true, title: 'Latest News', presentation:'fullScreenModal', animation:'fade_from_bottom' }} />
+      <Stack.Screen name="add-profile-popup" options={{ headerShown: false, presentation:'transparentModal', animation:'fade_from_bottom' }} />
+      <Stack.Screen name="logout-popup" options={{ headerShown: false, presentation:'transparentModal', animation:'fade_from_bottom' }} />
 
       <Stack.Screen name="country-list" options={{ headerShown: true, title: 'Countries', }} />
 

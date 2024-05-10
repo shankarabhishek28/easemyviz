@@ -25,7 +25,6 @@ const page = () => {
     return (
 
         <SafeAreaView>
-            <StatusBar backgroundColor={'white'} barStyle='dark-content' />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View gap={24} backgroundColor='white'>
                     <Box paddingLeft={20} paddingRight={20} paddingTop={20} gap={20}>
