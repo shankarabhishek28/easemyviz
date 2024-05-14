@@ -65,7 +65,7 @@ const page = () => {
 
                 </Box>
 
-                <Pressable elevation={3} borderRadius={12} mr={20} ml={20} backgroundColor='white' flexDirection='row' justifyContent='space-between' padding={16} alignItems='center'>
+                <Pressable onPress={()=>router.push('/(app)/edit-profile')} elevation={3} borderRadius={12} mr={20} ml={20} backgroundColor='white' flexDirection='row' justifyContent='space-between' padding={16} alignItems='center'>
                     <Box flexDirection='row' gap={14}>
                         <AntDesign name="edit" size={20} color={Colors.primary} />
 

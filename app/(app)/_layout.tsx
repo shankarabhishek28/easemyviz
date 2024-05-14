@@ -46,6 +46,9 @@ const  { loading,userToken} = useSelector((state:RootState)=>state.auth)
       <Stack.Screen name="news-details" options={{ headerShown: true, title: 'Latest News', presentation:'fullScreenModal', animation:'fade_from_bottom' }} />
       <Stack.Screen name="add-profile-popup" options={{ headerShown: false, presentation:'transparentModal', animation:'fade_from_bottom' }} />
       <Stack.Screen name="logout-popup" options={{ headerShown: false, presentation:'transparentModal', animation:'fade_from_bottom' }} />
+      <Stack.Screen name="edit-profile" options={{ headerShown: true,title: 'Edit Profile', presentation:'transparentModal', animation:'fade_from_bottom' }} />
+      <Stack.Screen name="delete-confirmation" options={{ headerShown: false , presentation:'transparentModal', animation:'fade_from_bottom' }} />
+
 
       <Stack.Screen name="country-list" options={{ headerShown: true, title: 'Countries', }} />
 
